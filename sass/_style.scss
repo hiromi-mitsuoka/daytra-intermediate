@@ -1,0 +1,232 @@
+$white: #FFFFFF;
+$black: #333333;
+$blue: #3F51B5;
+$red: #E81919;
+// CARD
+$gray: #DDDDDD;
+$bg-gray: #EFEFEF;
+$sec-title-font-size: 60px;
+$box-text-color: #6F7579;
+$box-title-font-size: 20px;
+$box-text-font-size: 16px;
+
+
+$list-font-size: 16px;
+
+$top-title-font-size: 68px;
+$top-title-maxmd-font-size: 50px;
+$top-title-maxsm-font-size: 37px;
+
+$top-subtitle-font-size: 38px;
+$top-subtitle-maxmd-font-size: 28px;
+$top-subtitle-maxsm-font-size: 22px;
+
+$top-button-font-size: 38px;
+$top-button-maxmd-font-size: 28px;
+$top-button-maxsm-font-size: 28px;
+
+// mobile first
+// $breakpoints: (
+//  'sm': 'screen and (min-width: 576px)',
+//  'md': 'screen and (min-width: 768px)',
+//  'lg': 'screen and (min-width: 992px)',
+//  'xl': 'screen and (min-width: 1200px)'
+// ) !default;
+
+// pc first
+$breakpoints: (
+ 'sm': 'screen and (max-width: 576px)',
+ 'md': 'screen and (max-width: 768px)',
+ 'lg': 'screen and (max-width: 992px)',
+) !default;
+
+//メディアクエリ用のmixinを定義。デフォ値はmd
+@mixin mq($breakpoint: md) {
+//map-get(マップ型変数, キー)で値を取得
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+//====================
+//  HEADER
+header{
+  background-color: $blue;
+  height: 100px;
+  position: fixed;
+  z-index: 9999;
+  img{
+    width: 200px;
+    height: 39px;
+    margin: 30px;
+    margin-left: 125px;
+    @include mq(lg){
+      margin-left: 60px;
+    }
+    @include mq(md){
+      margin-left: 50px;
+    }
+    @include mq(sm){
+      margin-left: 20px;
+    }
+  }
+  .nav-right{
+    float: right;
+    margin-top: 40px;
+    margin-right: 110px;
+    @include mq(lg){
+      margin-right: 60px;
+    }
+    @include mq(md){
+      display: none;
+    }
+  }
+  li{
+    font-size: $list-font-size;
+    list-style: none;
+    display: inline-block;
+    margin: 0 14PX;
+    a{
+      color: $white;
+      &:hover{
+      text-decoration: none;
+      color: $white;
+      padding-bottom: 4px;
+      border-bottom: 3px solid $red;
+    }
+    }
+  }
+}
+
+//===============
+//  TOP
+.top{
+  // opacity: 0.7;
+  background-image: url(../img/helloquence-OQMZwNd3ThU-unsplash.jpg);
+  background-color:rgba(255,255,255,0.4);
+  background-blend-mode:lighten;
+  background-size: cover;
+  padding: 130px 10px;
+  @include mq(sm){
+      height: 100vh;
+    }
+  h1{
+    font-size: $top-title-font-size;
+    padding-top: 120px;
+    margin-bottom: 14px;
+    font-weight: bold;
+    @include mq(md){
+      font-size: $top-title-maxmd-font-size;
+    }
+    @include mq(sm){
+      font-size: $top-title-maxsm-font-size;
+      padding-top: 150px;
+    }
+  }
+  p{
+    font-size: $top-subtitle-font-size;
+    margin-bottom: 75px;
+    font-weight: bold;
+    @include mq(md){
+      font-size: $top-subtitle-maxmd-font-size;
+    }
+    @include mq(sm){
+      font-size: $top-subtitle-maxsm-font-size;
+      padding-top: 30px;
+    }
+  }
+  a{
+    color: $white;
+    font-size: $top-button-font-size;
+    padding: 13px 81px;
+    background-color: $blue;
+    border-radius: 10px;
+    @include mq(md){
+      font-size: $top-button-maxmd-font-size;
+    }
+    @include mq(sm){
+      font-size: $top-button-maxsm-font-size;
+      padding: 17px 60px;
+    }
+  }
+}
+
+// =================
+// CARD
+.card{
+  background-color: $bg-gray;
+  h1{
+    font-size: $sec-title-font-size;
+    padding-top: 68px;
+    padding-bottom: 44px;
+    margin-bottom: 68px;
+    position: relative;
+    display: inline-block;
+    // margin-bottom: 1em;
+    &:before{
+      content: '';
+      position: absolute;
+      bottom: -15px;
+      display: inline-block;
+      width: 76px;
+      height: 5px;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+      transform: translateX(-50%);
+      background-color: $blue;
+      border-radius: 2px;
+    }
+  }
+  .flex{
+    display: flex;
+    justify-content: space-around;
+    &:last-child{
+      margin-bottom: 137px;
+      @include mq (md){
+        margin-bottom: 90px;
+      }
+    }
+    @include mq(sm){
+      display: block;
+    }
+    .box{
+      // width: 342px;
+      background-color: $white;
+      padding: 16px;
+      margin: 12px 20px ;
+      // width: calc(33.3333333% - 100px / 3);
+      // &:nth-child(3n) {
+      //     margin-right: 0;
+      // }
+      // @include mq(lg){
+      //   margin: 0 30px 20px 0;
+      //   width: calc(33.3333333% - 60px / 3);
+      // }
+      @include mq(sm){
+        width: 90%;
+      //   margin: 0 auto;
+      //   margin-bottom: 20px;
+      //   &:nth-child(3n) {
+      //     margin: 0 auto;
+      //     margin-bottom: 20px;
+      // }
+      }
+      .img-box{
+        width: 100%;
+        height: 161px;
+        background-color: $gray;
+        margin: 0 auto;
+        margin-bottom: 26px;
+      }
+      .box-title{
+        margin-bottom: 20px;
+        color: $box-text-color;
+        font-size: $box-title-font-size;
+      }
+      .box-text{
+        color: $box-text-color;
+        font-size: $box-text-font-size;
+      }
+    }
+  }
+}

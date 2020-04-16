@@ -1,0 +1,220 @@
+header {
+  background-color: #3F51B5;
+  height: 100px;
+  position: fixed;
+  z-index: 9999;
+}
+
+header img {
+  width: 200px;
+  height: 39px;
+  margin: 30px;
+  margin-left: 125px;
+}
+
+@media screen and (max-width: 992px) {
+  header img {
+    margin-left: 60px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  header img {
+    margin-left: 50px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  header img {
+    margin-left: 20px;
+  }
+}
+
+header .nav-right {
+  float: right;
+  margin-top: 40px;
+  margin-right: 110px;
+}
+
+@media screen and (max-width: 992px) {
+  header .nav-right {
+    margin-right: 60px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  header .nav-right {
+    display: none;
+  }
+}
+
+header li {
+  font-size: 16px;
+  list-style: none;
+  display: inline-block;
+  margin: 0 14PX;
+}
+
+header li a {
+  color: #FFFFFF;
+}
+
+header li a:hover {
+  text-decoration: none;
+  color: #FFFFFF;
+  padding-bottom: 4px;
+  border-bottom: 3px solid #E81919;
+}
+
+.top {
+  background-image: url(../img/helloquence-OQMZwNd3ThU-unsplash.jpg);
+  background-color: rgba(255, 255, 255, 0.4);
+  background-blend-mode: lighten;
+  background-size: cover;
+  padding: 130px 10px;
+}
+
+@media screen and (max-width: 576px) {
+  .top {
+    height: 100vh;
+  }
+}
+
+.top h1 {
+  font-size: 68px;
+  padding-top: 120px;
+  margin-bottom: 14px;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+  .top h1 {
+    font-size: 50px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .top h1 {
+    font-size: 37px;
+    padding-top: 150px;
+  }
+}
+
+.top p {
+  font-size: 38px;
+  margin-bottom: 75px;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+  .top p {
+    font-size: 28px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .top p {
+    font-size: 22px;
+    padding-top: 30px;
+  }
+}
+
+.top a {
+  color: #FFFFFF;
+  font-size: 38px;
+  padding: 13px 81px;
+  background-color: #3F51B5;
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .top a {
+    font-size: 28px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .top a {
+    font-size: 28px;
+    padding: 17px 60px;
+  }
+}
+
+.card {
+  background-color: #EFEFEF;
+}
+
+.card h1 {
+  font-size: 60px;
+  padding-top: 68px;
+  padding-bottom: 44px;
+  margin-bottom: 68px;
+  position: relative;
+  display: inline-block;
+}
+
+.card h1:before {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  display: inline-block;
+  width: 76px;
+  height: 5px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  background-color: #3F51B5;
+  border-radius: 2px;
+}
+
+.card .flex {
+  display: flex;
+  justify-content: space-around;
+}
+
+.card .flex:last-child {
+  margin-bottom: 137px;
+}
+
+@media screen and (max-width: 768px) {
+  .card .flex:last-child {
+    margin-bottom: 90px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .card .flex {
+    display: block;
+  }
+}
+
+.card .flex .box {
+  background-color: #FFFFFF;
+  padding: 16px;
+  margin: 12px 20px;
+}
+
+@media screen and (max-width: 576px) {
+  .card .flex .box {
+    width: 90%;
+  }
+}
+
+.card .flex .box .img-box {
+  width: 100%;
+  height: 161px;
+  background-color: #DDDDDD;
+  margin: 0 auto;
+  margin-bottom: 26px;
+}
+
+.card .flex .box .box-title {
+  margin-bottom: 20px;
+  color: #6F7579;
+  font-size: 20px;
+}
+
+.card .flex .box .box-text {
+  color: #6F7579;
+  font-size: 16px;
+}
